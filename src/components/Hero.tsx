@@ -50,7 +50,10 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative font-sans min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4">
+    <section 
+      id="home" 
+      className="relative font-sans min-h-screen flex items-start md:items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 pt-40 md:pt-4"
+    >
       
       <div
         className="pointer-events-none absolute -inset-px transition duration-300 hidden md:block"
@@ -216,4 +219,4 @@ export const Hero = () => {
       </motion.div>
     </section>
   );
-};  
+};
