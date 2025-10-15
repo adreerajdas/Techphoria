@@ -3,14 +3,15 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export const Schedule = () => {
+  // Updated schedule array based on the provided information
   const schedule = [
-    { time: '11:00 AM', title: 'Opening Ceremony', description: 'Welcome and competition overview' },
-    { time: '11:15 AM', title: 'Instructions & Guidelines', description: 'Detailed rules and platform walkthrough' },
-    { time: '11:30 AM', title: 'Level 1 Challenges Begin', description: 'First set of coding problems' },
-    { time: '12:15 PM', title: 'Level 2 Challenges', description: 'Intermediate difficulty problems' },
-    { time: '01:00 PM', title: 'Level 3 Challenges', description: 'Advanced coding challenges' },
-    { time: '02:00 PM', title: 'Competition Ends', description: 'Submission deadline' },
-    { time: 'Later', title: 'Winner Announcement', description: 'Results will be announced after evaluation' },
+    { time: '11:00 AM', title: 'Google Meet Link Shared', description: 'The link to join the event will be distributed.' },
+    { time: '11:15 AM', title: 'Joining Time', description: 'Participants can start joining the Google Meet session.' },
+    { time: '11:30 AM', title: 'Inauguration & Entry Closes', description: 'The welcome program begins. No entry is permitted after this time.' },
+    { time: '11:45 AM', title: 'Instructions for Participants', description: 'Rules and guidelines for the competition will be explained.' },
+    { time: '12:00 PM', title: 'Competition Begins', description: 'Round 1 (Coding Challenges) & Round 2 (MCQ Questions) start.' },
+    { time: '01:00 PM', title: 'Competition Ends', description: 'All submissions are final and the competition concludes.' },
+    { time: 'Later', title: 'Winner Announcement', description: 'Results will be announced after the evaluation process.' },
   ];
 
   // A small helper component for individual animated items
@@ -47,7 +48,7 @@ export const Schedule = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6"><span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Event Schedule</span></h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">3 hours of intense coding competition</p>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">Follow the timeline for the competition</p>
         </div>
 
         <div className="max-w-4xl mx-auto">

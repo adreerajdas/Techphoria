@@ -15,11 +15,12 @@ export const Header = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Tracks', href: '#tracks' },
+    { name: 'Formats', href: '#formats' },
     { name: 'Schedule', href: '#schedule' },
     { name: 'Prizes', href: '#prizes' },
     { name: 'Organizers', href: '#organizers' },
     { name: 'Register', href: '#register' },
+    { name: 'MORE', href: '#footer' }, // <-- This is the new button
   ];
 
   return (
@@ -29,15 +30,13 @@ export const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            {/* --- CHANGE START --- */}
             <a href="#home">
-              <img 
-                src="/images/logo.png" 
-                alt="TechPhoria Logo" 
+              <img
+                src="/images/logo.png"
+                alt="TechPhoria Logo"
                 className="h-8 w-auto object-contain"
               />
             </a>
-            {/* --- CHANGE END --- */}
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

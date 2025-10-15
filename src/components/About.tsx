@@ -47,7 +47,109 @@ const GlitchText: React.FC<GlitchTextProps> = ({ text, className = '' }) => {
     </div>
   );
 };
-// -------------------------------
+
+// --- Photo Gallery Component ---
+const PhotoGallery = ({ photos, onPhotoClick }: { photos: string[], onPhotoClick: (index: number) => void }) => {
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+
+  // Mobile layout - simple grid
+  const MobileGallery = () => (
+    <div className="grid grid-cols-2 gap-4 md:hidden">
+      {photos.map((src, index) => (
+        <motion.button
+          key={src}
+          onClick={() => onPhotoClick(index)}
+          className="aspect-square rounded-xl overflow-hidden shadow-lg border-2 border-white/20 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <motion.img
+            src={src}
+            alt={`Event photo ${index + 1}`}
+            className="w-full h-full object-cover"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.button>
+      ))}
+    </div>
+  );
+
+  // Desktop layout - fanned cards
+  const DesktopGallery = () => (
+    <div className="hidden md:flex items-center justify-center h-96 relative">
+      {photos.map((src, index) => {
+        const isHovered = hoveredIndex === index;
+        const distanceFromCenter = index - (photos.length - 1) / 2;
+        
+        return (
+          <motion.button
+            key={src}
+            onClick={() => onPhotoClick(index)}
+            onHoverStart={() => setHoveredIndex(index)}
+            onHoverEnd={() => setHoveredIndex(null)}
+            className="absolute w-56 h-36 overflow-hidden rounded-xl shadow-2xl border-2 border-white/20 cursor-pointer focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
+            style={{
+              originX: 0.5,
+              originY: 0.5,
+              zIndex: isHovered ? 20 : 10 - Math.abs(distanceFromCenter),
+            }}
+            animate={{
+              rotate: isHovered ? 0 : distanceFromCenter * 8,
+              x: isHovered ? distanceFromCenter * 60 : distanceFromCenter * 40,
+              y: isHovered ? -20 : Math.abs(distanceFromCenter) * -5,
+              scale: isHovered ? 1.15 : 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+            }}
+            whileHover={{
+              boxShadow: "0 25px 50px -12px rgba(34, 211, 238, 0.25)",
+              borderColor: "rgba(34, 211, 238, 0.5)",
+            }}
+          >
+            <motion.img
+              src={src}
+              alt={`Event photo ${index + 1}`}
+              className="w-full h-full object-cover"
+              animate={{
+                scale: isHovered ? 1.1 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+            />
+            
+            {/* Hover Overlay */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0"
+              animate={{ opacity: isHovered ? 1 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="absolute bottom-3 left-3 right-3">
+                <motion.div
+                  className="text-white text-sm font-semibold bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-center"
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  View Photo {index + 1}
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.button>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <>
+      <MobileGallery />
+      <DesktopGallery />
+    </>
+  );
+};
 
 const About = () => {
   const [lightboxIndex, setLightboxIndex] = React.useState<number | null>(null);
@@ -175,30 +277,8 @@ const About = () => {
           </motion.div>
 
           {/* --- Right Column: Photo Gallery --- */}
-          <motion.div className="relative h-99 flex items-center justify-center" variants={itemVariants}>
-            {photos.map((src, i) => (
-            <motion.button
-                  key={src}
-                  onClick={() => openLightbox(i)}
-              className="absolute w-80 h-48 overflow-hidden rounded-lg shadow-2xl border-2 border-white/20 cursor-pointer focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
-                  style={{
-                      originX: 0.5,
-                      originY: 0.5,
-                      // Custom positioning for a fanned-out look
-                  transform: `rotate(${ (i - 1.5) * 10 }deg) translateX(${ (i - 1.5) * 36 }px) translateY(${ (i % 2 === 0 ? -1 : 1) * 12 }px)`
-                  }}
-                  whileHover={{ 
-                      scale: 1.1, 
-                      rotate: 0, 
-                      zIndex: 10, 
-                      boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.4)' 
-                  }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                  aria-label={`View photo ${i + 1}`}
-                >
-                  <img src={src} alt={`Event photo ${i + 1}`} className="w-full h-full object-cover"/>
-                </motion.button>
-            ))}
+          <motion.div className="relative" variants={itemVariants}>
+            <PhotoGallery photos={photos} onPhotoClick={openLightbox} />
           </motion.div>
 
         </motion.div>
@@ -214,46 +294,86 @@ const About = () => {
             onClick={closeLightbox}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
           >
-            {/* Main Image */}
-            <motion.img
-              layoutId={`photo-${lightboxIndex}`}
-              src={photos[lightboxIndex]}
-              alt={`Event photo ${lightboxIndex + 1}`}
-              className="max-w-4xl w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()} // Prevents closing lightbox when clicking image
-            />
-            
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors bg-black/50 rounded-full p-2"
-              aria-label="Close lightbox"
+            {/* Main Image Container */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              className="relative max-w-6xl w-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-            
-            {/* Prev Button */}
-            <button
-              onClick={(e) => { e.stopPropagation(); prevImage(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors bg-black/50 rounded-full p-2"
-              aria-label="Previous image"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-            </button>
-            
-            {/* Next Button */}
-            <button
-              onClick={(e) => { e.stopPropagation(); nextImage(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors bg-black/50 rounded-full p-2"
-              aria-label="Next image"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-            </button>
-            
-            {/* Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 bg-black/50 px-3 py-1 rounded-full text-sm">
-              {lightboxIndex + 1} / {photos.length}
-            </div>
+              {/* Main Image */}
+              <motion.img
+                key={lightboxIndex}
+                src={photos[lightboxIndex]}
+                alt={`Event photo ${lightboxIndex + 1}`}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              />
+              
+              {/* Close Button */}
+              <button
+                onClick={closeLightbox}
+                className="absolute top-4 right-4 text-white/80 hover:text-white transition-all bg-black/60 hover:bg-black/80 rounded-full p-3 backdrop-blur-sm"
+                aria-label="Close lightbox"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              
+              {/* Prev Button */}
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all bg-black/60 hover:bg-black/80 rounded-full p-3 backdrop-blur-sm"
+                aria-label="Previous image"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              {/* Next Button */}
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-all bg-black/60 hover:bg-black/80 rounded-full p-3 backdrop-blur-sm"
+                aria-label="Next image"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              {/* Counter */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                {lightboxIndex + 1} / {photos.length}
+              </div>
+
+              {/* Thumbnail Strip */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 transform flex space-x-2 mt-4">
+                {photos.map((src, index) => (
+                  <button
+                    key={src}
+                    onClick={(e) => { e.stopPropagation(); setLightboxIndex(index); }}
+                    className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      index === lightboxIndex 
+                        ? 'border-cyan-400 scale-110' 
+                        : 'border-white/30 hover:border-white/60'
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

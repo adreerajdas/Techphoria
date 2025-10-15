@@ -5,7 +5,7 @@ import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { CountdownTimer } from '../components/CountdownTimer';
 import About from '../components/About';
-import { Tracks } from '../components/Tracks';
+import { Format } from '../components/Format';
 import { Schedule } from '../components/Schedule';
 import { Prizes } from '../components/Prizes';
 import { Organizers } from '../components/Organizers';
@@ -37,7 +37,7 @@ export default function Home() {
         <Hero />
         <CountdownTimer />
         <About />
-        <Tracks />
+    <Format />
         <Schedule />
         <Prizes />
         <Organizers />

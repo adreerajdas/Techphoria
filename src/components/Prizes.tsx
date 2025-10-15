@@ -38,7 +38,7 @@ export const Prizes = () => (
         transition={{ duration: 0.7 }}
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-6"><span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Rewards & Recognition</span></h2>
-        <p className="text-xl text-white/70 max-w-2xl mx-auto">Earn certificates, swags, and the title of coding champion</p>
+        <p className="text-xl text-white/70 max-w-2xl mx-auto">Beyond the glory, exciting prizes await. Top performers get featured, with special surprises and much more for the winners!</p>
       </motion.div>
 
       {/* Use motion.div for the grid container and apply variants */}
@@ -50,9 +50,10 @@ export const Prizes = () => (
         viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the container is visible
       >
         {[
-          { rank: '2nd', prize: 'Runner-up', color: 'from-gray-400 to-gray-600', description: 'Certificate + Swag Kit', features: ['Digital Certificate', 'Exclusive Swag Kit', 'Special Mention'] },
-          { rank: '1st', prize: 'Champion', color: 'from-yellow-400 to-orange-500', description: 'Winner Package', features: ['Winner Certificate', 'Premium Swag Kit', 'Champion Trophy', 'Featured on Website'], featured: true },
-          { rank: '3rd', prize: '2nd Runner-up', color: 'from-amber-600 to-amber-800', description: 'Certificate + Swag Kit', features: ['Digital Certificate', 'Exclusive Swag Kit', 'Special Mention'] },
+          // Updated Prize Information (Swags removed)
+          { rank: '2nd', prize: 'Runner-up', color: 'from-gray-400 to-gray-600', description: 'Runner-up Package', features: ['Certificate', 'Featured on Website', 'Surprise Gift'] },
+          { rank: '1st', prize: 'Champion', color: 'from-yellow-400 to-orange-500', description: 'Champion\'s Bounty', features: ['Winner Certificate', 'Champion Trophy', 'Featured on Website', 'Surprise Gift'], featured: true },
+          { rank: '3rd', prize: '2nd Runner-up', color: 'from-amber-600 to-amber-800', description: 'Bronze Package', features: ['Certificate', 'Featured on Website', 'Surprise Gift'] },
         ].map((prize, index) => (
           // Wrap each card in a motion.div and apply its variants
           <motion.div key={index} variants={cardVariants}>
@@ -63,7 +64,7 @@ export const Prizes = () => (
                   <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 mb-4">{prize.prize}</div>
                   <div className="text-white/70 mb-6">{prize.description}</div>
                   <ul className="space-y-2 mb-6">{prize.features.map((feature, featureIndex) => (<li key={featureIndex} className="text-white/80 text-sm">✓ {feature}</li>))}</ul>
-                  <div className="text-xs text-white/50">All participants receive certificates</div>
+                  <div className="text-xs text-white/50">All participants receive a certificate</div>
                 </div>
               </div>
             </TiltCard>
@@ -80,7 +81,7 @@ export const Prizes = () => (
       >
         <div className="inline-flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-6 py-3 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300">
           <TrophyIcon />
-          <span className="text-cyan-400 font-semibold">Certificates for All Participants • Exciting Swags for Winners</span>
+          <span className="text-cyan-400 font-semibold">Participation Certificates for All • Surprises for Top Coders</span>
         </div>
       </motion.div>
     </div>

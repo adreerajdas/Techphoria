@@ -32,7 +32,6 @@ export const CountdownTimer = () => {
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="text-center">
-      {/* UPDATED: Added transition, scale, and hover border effect */}
       <div 
         className="bg-black/30 backdrop-blur-sm rounded-lg p-3 min-w-[60px] 
                    border border-cyan-500/30 transition-all duration-300 ease-in-out 
@@ -46,6 +45,7 @@ export const CountdownTimer = () => {
 
   return (
     <section 
+      id="countdown"
       ref={ref} // Attach the ref here
       className="py-16 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 relative overflow-hidden"
     >
@@ -66,8 +66,18 @@ export const CountdownTimer = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-8">
-          {/* UPDATED: Added glow effect via style and changed font-bold to font-extrabold */}
           <h2 className={`text-3xl md:text-4xl font-extrabold mb-4 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* UPDATED: "Season 2" is now red with a matching red glow */}
+            <span 
+              className="text-red-500"
+              style={{
+                // Red glow to match the text color
+                textShadow: '0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.4)' 
+              }}
+            >
+              Season 2
+            </span>
+            {/* The rest of the title keeps the original gradient */}
             <span 
               className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400"
               style={{
@@ -75,16 +85,14 @@ export const CountdownTimer = () => {
                 textShadow: '0 0 10px rgba(52, 211, 235, 0.7), 0 0 20px rgba(52, 211, 235, 0.4)' 
               }}
             >
-              Competition Starts In
+              {' '}Competition Starts In
             </span>
           </h2>
-          {/* Added transition and delay for a staggered effect */}
           <p className={`text-white/70 max-w-2xl mx-auto transition-all duration-700 ease-in-out delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             Mark your calendars! The coding battle begins on November 7, 2025 at 11:00 AM
           </p>
         </div>
         
-        {/* Added transition and delay for a staggered effect */}
         <div className={`flex justify-center space-x-4 mb-8 transition-all duration-700 ease-in-out delay-400 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <TimeUnit value={timeLeft.days} label="Days" />
           <TimeUnit value={timeLeft.hours} label="Hours" />
@@ -92,7 +100,6 @@ export const CountdownTimer = () => {
           <TimeUnit value={timeLeft.seconds} label="Seconds" />
         </div>
         
-        {/* Added transition and delay for a staggered effect */}
         <div className={`text-center transition-all duration-700 ease-in-out delay-600 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-6 py-3 border border-cyan-500/30">
             <CalendarIcon />

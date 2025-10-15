@@ -22,10 +22,15 @@ export const Register = () => (
         ))}</div>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-lg">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScNdEUSOSkX66hEg0W1IT3NtMTxRzqhVU8FWb5PhjPhAXLWEg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-lg"
+          >
             <span className="relative z-10">Register Now</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+          </a>
           <a href="#register" className="text-cyan-300/80 hover:text-cyan-400 transition-colors text-sm font-medium mt-2 sm:mt-0">Guidelines</a>
         </div>
 
