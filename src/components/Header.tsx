@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,10 +32,13 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#home">
-              <img
+              <Image
                 src="/images/logo.png"
                 alt="TechPhoria Logo"
                 className="h-8 w-auto object-contain"
+                width={100}
+                height={32}
+                priority
               />
             </a>
           </div>

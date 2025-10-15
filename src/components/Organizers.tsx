@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { TiltCard } from './TiltCard';
 import { AcademicCapIcon, SparklesIcon } from './Icons';
 
@@ -133,10 +134,12 @@ export const Organizers = () => {
                     {/* Main Image Container */}
                     <div className={`w-48 h-48 rounded-full bg-gradient-to-r ${organizer.color} flex items-center justify-center text-5xl overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-300`}>
                       {organizer.photo ? (
-                        <img 
-                          src={organizer.photo} 
-                          alt={organizer.name} 
+                        <Image
+                          src={organizer.photo}
+                          alt={organizer.name}
                           className="w-full h-full rounded-full object-cover"
+                          width={192}
+                          height={192}
                         />
                       ) : (
                         <span>{organizer.avatar}</span>

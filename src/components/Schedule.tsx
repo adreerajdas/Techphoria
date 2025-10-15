@@ -16,7 +16,16 @@ export const Schedule = () => {
 
   // A small helper component for individual animated items
   // This keeps the main component cleaner
-  const ScheduleItem = ({ event, index }) => {
+  interface ScheduleEvent {
+    time: string;
+    title: string;
+    description: string;
+  }
+  interface ScheduleItemProps {
+    event: ScheduleEvent;
+    index: number;
+  }
+  const ScheduleItem: React.FC<ScheduleItemProps> = ({ event, index }) => {
     // The useInView hook gives us a ref and a boolean (inView)
     // triggerOnce: true ensures the animation only runs once
     const { ref, inView } = useInView({

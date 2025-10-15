@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Helper Icon Components ---
@@ -199,7 +200,7 @@ const About = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, nextImage, prevImage, closeLightbox]);
 
   React.useEffect(() => {
     document.body.style.overflow = lightboxIndex !== null ? 'hidden' : 'auto';
@@ -244,7 +245,7 @@ const About = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-4">Step into the Arena</h3>
               <p className="text-white/70 leading-relaxed mb-4">
-                TechPhoria S2 is an individual coding competition designed to push your limits. It's not just about writing code; it's about strategic thinking, efficiency, and showcasing your raw talent against the clock.
+                TechPhoria S2 is an individual coding competition designed to push your limits. It&apos;s not just about writing code; it&apos;s about strategic thinking, efficiency, and showcasing your raw talent against the clock.
               </p>
               <div className="flex items-center space-x-6 pt-4 text-sm">
                 <div className="flex items-center space-x-2 text-cyan-400">
@@ -365,10 +366,12 @@ const About = () => {
                         : 'border-white/30 hover:border-white/60'
                     }`}
                   >
-                    <img
+                    <Image
                       src={src}
                       alt={`Thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
+                      width={200}
+                      height={200}
                     />
                   </button>
                 ))}

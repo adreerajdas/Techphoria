@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import motion
+import { motion, easeOut } from 'framer-motion'; // Import motion and easeOut
 import { TiltCard } from './TiltCard';
 import { TrophyIcon } from './Icons';
 
@@ -22,7 +22,7 @@ const cardVariants = {
     y: 0, // End visible and at its original position
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+  ease: easeOut,
     },
   },
 };
