@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Techphoria",
-  description: "Techphoria 2025 - Season 2",
+  description: "Techphoria 2025 - Season 3",
   icons: {
     icon: '/images/logo.png',
   },

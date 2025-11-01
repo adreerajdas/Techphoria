@@ -113,7 +113,7 @@ export const Organizers = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6"><span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Organizers</span></h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">Meet the dedicated team behind TechPhoria Season 2</p>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">Meet the dedicated team behind TechPhoria Season 3</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

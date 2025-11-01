@@ -7,9 +7,9 @@ export const Footer = () => (
     </div>
     <div className="container mx-auto px-6 relative z-10">
       <div className="text-center">
-        <div className="flex justify-center items-center space-x-2 mb-6">
+          <div className="flex justify-center items-center space-x-2 mb-6">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-          <h3 className="text-2xl font-bold text-white">TechPhoria <span className="text-cyan-400">S2</span></h3>
+          <h3 className="text-2xl font-bold text-white">TechPhoria <span className="text-cyan-400">S3</span></h3>
         </div>
         
         <p className="text-white/60 mb-6 max-w-md mx-auto">
@@ -19,7 +19,7 @@ export const Footer = () => (
         {/* Contact Information Section */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
           <a 
-            href="mailto:techphorias2@gmail.com" 
+            href="mailto:techphorias3@gmail.com" 
             className="text-white/60 hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2"
           >
             {/* You can add an email icon here if you want */}
@@ -35,8 +35,8 @@ export const Footer = () => (
           </a>
         </div>
 
-        <div className="text-white/40 text-sm">
-          © 2025 TechPhoria Season 2. All rights reserved.
+          <div className="text-white/40 text-sm">
+          © 2025 TechPhoria Season 3. All rights reserved.
         </div>
       </div>
     </div>

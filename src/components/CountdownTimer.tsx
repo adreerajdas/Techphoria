@@ -12,7 +12,7 @@ export const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-11-07T11:00:00').getTime();
+    const targetDate = new Date('2026-01-07T11:00:00').getTime();
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -67,7 +67,7 @@ export const CountdownTimer = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-8">
           <h2 className={`text-3xl md:text-4xl font-extrabold mb-4 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* UPDATED: "Season 2" is now red with a matching red glow */}
+            {/* UPDATED: "Season 3" is now red with a matching red glow */}
             <span 
               className="text-red-500"
               style={{
@@ -75,7 +75,7 @@ export const CountdownTimer = () => {
                 textShadow: '0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.4)' 
               }}
             >
-              Season 2
+              Season 3
             </span>
             {/* The rest of the title keeps the original gradient */}
             <span 
@@ -89,7 +89,7 @@ export const CountdownTimer = () => {
             </span>
           </h2>
           <p className={`text-white/70 max-w-2xl mx-auto transition-all duration-700 ease-in-out delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Mark your calendars! The coding battle begins on November 7, 2025 at 11:00 AM
+            Mark your calendars! The coding battle begins on January 7, 2026 at 11:00 AM
           </p>
         </div>
         
@@ -103,10 +103,10 @@ export const CountdownTimer = () => {
         <div className={`text-center transition-all duration-700 ease-in-out delay-600 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-6 py-3 border border-cyan-500/30">
             <CalendarIcon />
-            <span className="text-cyan-400 font-semibold">November 7, 2025 | 11:00 AM - 2:00 PM</span>
+            <span className="text-cyan-400 font-semibold">January 7, 2026 | 11:00 AM - 2:00 PM</span>
           </div>
         </div>
       </div>
     </section>
   );
-};
+};  

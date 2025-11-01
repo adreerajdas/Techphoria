@@ -136,7 +136,7 @@ export const Hero = () => {
         </motion.h1>
 
         <motion.div variants={itemVariants}>
-          <div className="text-base font-bold text-white -mt-3 md:-mt-4">Season <span className="text-cyan-400">2</span></div>
+          <div className="text-base font-bold text-white -mt-3 md:-mt-4">Season <span className="text-cyan-400">3</span></div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="w-full max-w-3xl mt-8">
