@@ -1,4 +1,5 @@
 import React from 'react';
+import { WhatsAppIcon } from './Icons';
 
 export const Footer = () => (
   <footer id="footer" className="bg-gradient-to-t from-black to-gray-900 py-12 border-t border-white/10 relative overflow-hidden">
@@ -9,7 +10,7 @@ export const Footer = () => (
       <div className="text-center">
           <div className="flex justify-center items-center space-x-2 mb-6">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
-          <h3 className="text-2xl font-bold text-white">TechPhoria <span className="text-cyan-400">S3</span></h3>
+          <h3 className="text-2xl font-bold text-white">TechPhoria <span className="text-cyan-400">Session 2025-26</span></h3>
         </div>
         
         <p className="text-white/60 mb-6 max-w-md mx-auto">
@@ -36,7 +37,7 @@ export const Footer = () => (
         </div>
 
           <div className="text-white/40 text-sm">
-          © 2025 TechPhoria Season 3. All rights reserved.
+          © 2025 TechPhoria. All rights reserved.
         </div>
       </div>
     </div>

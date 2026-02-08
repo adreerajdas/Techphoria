@@ -12,8 +12,8 @@ export const Register = () => (
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">{[
           { label: 'Competition Type', value: 'Individual' },
-          { label: 'Duration', value: '3 Hours' },
-          { label: 'Registration Deadline', value: 'Jan 5' },
+          { label: 'Duration', value: '1 Hours' },
+          { label: 'Registration Deadline', value: 'Feb 17' },
         ].map((stat, index) => (
           <div key={index} className="text-center">
             <div className="text-3xl font-bold text-cyan-400 mb-2 hover:scale-110 transition-transform duration-300">{stat.value}</div>
@@ -34,8 +34,8 @@ export const Register = () => (
           
           {/* Instruction Button */}
           <a 
-            href="/documents/Techphoria S3 - Instructions.pdf" 
-            download="Techphoria S3 - Instructions.pdf"
+            href="/documents/Techphoria - Instructions.pdf" 
+            download="Techphoria - Instructions.pdf"
             className="group relative border border-cyan-400 text-cyan-400 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 text-lg"
           >
             <span className="relative z-10">Instructions</span>
@@ -44,8 +44,8 @@ export const Register = () => (
           
           {/* Schedule Button */}
           <a 
-            href="/documents/Techphoria S3 - Programme Schedule.pdf" 
-            download="Techphoria S3 - Programme Schedule.pdf"
+            href="/documents/Techphoria - Programme Schedule.pdf" 
+            download="Techphoria - Programme Schedule.pdf"
             className="group relative border border-purple-400 text-purple-400 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-purple-400 hover:text-black hover:scale-105 text-lg"
           >
             <span className="relative z-10">Schedule</span>
@@ -53,7 +53,7 @@ export const Register = () => (
           </a>
         </div>
 
-        <p className="text-white/40 mt-8 text-sm">Registration closes on January 5, 2026 • Individual participation only</p>
+        <p className="text-white/40 mt-8 text-sm">Registration closes on February 17, 2026 • Individual participation only</p>
       </div>
     </div>
   </section>

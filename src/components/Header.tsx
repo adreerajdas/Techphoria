@@ -17,11 +17,9 @@ export const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Formats', href: '#formats' },
-    { name: 'Schedule', href: '#schedule' },
     { name: 'Prizes', href: '#prizes' },
     { name: 'Organizers', href: '#organizers' },
     { name: 'Register', href: '#register' },
-    { name: 'MORE', href: '#footer' }, // <-- This is the new button
   ];
 
   return (

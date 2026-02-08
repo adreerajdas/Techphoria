@@ -164,7 +164,7 @@ const About = () => {
   
   // Stats data now includes icons
   const stats = [
-    { number: '3', label: 'Hours of Coding', Icon: ClockIcon },
+    { number: '1', label: 'Hours of Coding', Icon: ClockIcon },
     { number: 'Individual', label: 'Participation', Icon: UsersIcon },
     { number: '3', label: 'Challenge Levels', Icon: TrophyIcon },
     { number: 'Certificates', label: '& Swags', Icon: GiftIcon },
@@ -245,7 +245,7 @@ const About = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-4">Step into the Arena</h3>
               <p className="text-white/70 leading-relaxed mb-4">
-                TechPhoria S2 is an individual coding competition designed to push your limits. It&apos;s not just about writing code; it&apos;s about strategic thinking, efficiency, and showcasing your raw talent against the clock.
+                Techphoria 2026! Organized by the Department of Computer Science & Technology at Technique Polytechnic Institute, this State Level Online Coding Competition is the ultimate arena for CST, CSWT, and IT students across West Bengal to showcase their skills in C, Python, and Java. Mark your calendars for February 19th—it’s completely free to register, and every participant earns a certificate, while top performers walk away with badges, prizes, and amazing goodies. Whether you're a seasoned programmer or just starting your journey, this is your chance to code, learn, and collaborate virtually from anywhere!.
               </p>
               <div className="flex items-center space-x-6 pt-4 text-sm">
                 <div className="flex items-center space-x-2 text-cyan-400">

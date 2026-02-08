@@ -12,7 +12,9 @@ export const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-01-07T11:00:00').getTime();
+    // UPDATED: Target date set to February 19, 2026, at 12:00 PM
+    const targetDate = new Date('2026-02-19T12:00:00').getTime();
+    
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -24,6 +26,9 @@ export const CountdownTimer = () => {
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000)
         });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(timer);
       }
     }, 1000);
 
@@ -46,7 +51,7 @@ export const CountdownTimer = () => {
   return (
     <section 
       id="countdown"
-      ref={ref} // Attach the ref here
+      ref={ref} 
       className="py-16 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
@@ -67,29 +72,26 @@ export const CountdownTimer = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-8">
           <h2 className={`text-3xl md:text-4xl font-extrabold mb-4 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            {/* UPDATED: "Season 3" is now red with a matching red glow */}
             <span 
               className="text-red-500"
               style={{
-                // Red glow to match the text color
                 textShadow: '0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.4)' 
               }}
             >
-              Season 3
+              Session 2025-26
             </span>
-            {/* The rest of the title keeps the original gradient */}
             <span 
               className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400"
               style={{
-                // Subtle cyan glow to match the gradient and theme
                 textShadow: '0 0 10px rgba(52, 211, 235, 0.7), 0 0 20px rgba(52, 211, 235, 0.4)' 
               }}
             >
               {' '}Competition Starts In
             </span>
           </h2>
+          {/* UPDATED: Description Text */}
           <p className={`text-white/70 max-w-2xl mx-auto transition-all duration-700 ease-in-out delay-200 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Mark your calendars! The coding battle begins on January 7, 2026 at 11:00 AM
+            Mark your calendars! The coding battle begins
           </p>
         </div>
         
@@ -103,10 +105,11 @@ export const CountdownTimer = () => {
         <div className={`text-center transition-all duration-700 ease-in-out delay-600 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-6 py-3 border border-cyan-500/30">
             <CalendarIcon />
-            <span className="text-cyan-400 font-semibold">January 7, 2026 | 11:00 AM - 2:00 PM</span>
+            {/* UPDATED: Time range label (assumed 3-hour duration based on Hero section) */}
+            <span className="text-cyan-400 font-semibold">February 19, 2026 | 12:00 PM </span>
           </div>
         </div>
       </div>
     </section>
   );
-};  
+};
