@@ -1,5 +1,4 @@
 import React from 'react';
-import { WhatsAppIcon } from './Icons';
 
 export const Footer = () => (
   <footer id="footer" className="bg-gradient-to-t from-black to-gray-900 py-12 border-t border-white/10 relative overflow-hidden">
