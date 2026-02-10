@@ -164,7 +164,7 @@ const About = () => {
   
   // Stats data now includes icons
   const stats = [
-    { number: '1', label: 'Hours of Coding', Icon: ClockIcon },
+    { number: '1.5', label: 'Hours of Coding', Icon: ClockIcon },
     { number: 'Individual', label: 'Participation', Icon: UsersIcon },
     { number: '3', label: 'Challenge Levels', Icon: TrophyIcon },
     { number: 'Certificates', label: '& Swags', Icon: GiftIcon },

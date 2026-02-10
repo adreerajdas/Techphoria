@@ -1,44 +1,43 @@
 import React from 'react';
-import { TiltCard } from './TiltCard'; // Assuming TiltCard is in the same directory
+import { TiltCard } from './TiltCard';
 
 export const Format = () => {
   const contestStages = [
     {
+      icon: '🧠',
+      title: 'MCQs',
+      description: 'Test your fundamental knowledge and logic with a comprehensive set of technical questions.',
+      details: [
+        'Marks: 100',
+        'Focus: Logic & Concepts',
+        'Duration: Part of the 1.5h slot',
+      ],
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
       icon: '💻',
-      title: 'Part 1: Coding Round',
-      description: 'The initial phase where participants tackle a series of challenges to prove their coding prowess.',
+      title: 'Coding',
+      description: 'Implement algorithms and solve complex problems using your preferred language.',
       details: [
-        'Maximum Marks: 75',
-        'Scoring is based on passed test cases.',
-        'Highest score per challenge is considered.',
+        'Marks: 100',
+        'C, C++, Java, or Python',
+        'Real-time test case validation',
       ],
-      color: 'from-cyan-500 to-blue-500',
+      color: 'from-purple-500 to-indigo-500',
     },
     {
-      icon: '🏆',
-      title: 'Part 2: The Finalist Quiz',
-      description: 'A high-stakes live quiz for the elite contenders who have proven their skills in the coding round.',
+      icon: '⏱️',
+      title: 'The Challenge',
+      description: 'A race against time to maximize your score across both sections of the event.',
       details: [
-        'Eligibility: Top 20 Participants',
-        'Maximum Marks: 25',
-        'Format: LIVE On-Camera Quiz.',
+        'Total Duration: 1.5 Hours',
+        'Full Marks: 200 Total',
+        'Ranked by speed & accuracy',
       ],
-      color: 'from-purple-500 to-pink-500',
-    },
-    {
-      icon: '🏅',
-      title: 'Grand Prizes Await',
-      description: 'The ultimate reward for exceptional performance and mastery in the competition!',
-      details: [
-        'Top 3 Finalists will receive prizes.',
-        'Recognizing outstanding coding and quiz skills.',
-        'Be among the best to win!',
-      ],
-      color: 'from-yellow-400 to-orange-500',
+      color: 'from-orange-400 to-red-500',
     },
   ];
 
-  // --- NEW: Define animation keyframes as a string ---
   const keyframes = `
     @keyframes text-gradient {
       0% { background-position: 0% 50%; }
@@ -49,40 +48,23 @@ export const Format = () => {
 
   return (
     <section id="formats" className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-      {/* --- NEW: Inject the keyframes into a style tag --- */}
       <style>{keyframes}</style>
       
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.03)_50%,transparent_75%,transparent_100%)] bg-[size:64px_64px]"></div>
-      <div className="absolute inset-0">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-3 h-3 border border-cyan-400/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `spin ${10 + Math.random() * 20}s linear ${Math.random() * 5}s infinite`,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Main Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {/* --- MODIFIED: Added classes to the span for the animation --- */}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-[size:200%_auto] animate-[text-gradient_3s_ease_infinite]">
               Contest Format
             </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            A multi-stage challenge culminating in recognition for the ultimate coding champions.
+            1.5 Hours. 200 Marks. One Champion.
           </p>
         </div>
 
-        {/* Contest Stages & Prizes Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {contestStages.map((stage) => (
             <TiltCard key={stage.title} className="group">
@@ -100,7 +82,9 @@ export const Format = () => {
                   <ul className="space-y-2 text-white/80">
                     {stage.details.map((detail) => (
                       <li key={detail} className="flex items-center">
-                        <svg className="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg className="w-4 h-4 mr-3 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         <span>{detail}</span>
                       </li>
                     ))}

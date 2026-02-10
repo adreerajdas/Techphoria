@@ -7,7 +7,7 @@ export const Footer = () => (
     </div>
     <div className="container mx-auto px-6 relative z-10">
       <div className="text-center">
-          <div className="flex justify-center items-center space-x-2 mb-6">
+        <div className="flex justify-center items-center space-x-2 mb-6">
           <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
           <h3 className="text-2xl font-bold text-white">TechPhoria <span className="text-cyan-400">Session 2025-26</span></h3>
         </div>
@@ -19,10 +19,9 @@ export const Footer = () => (
         {/* Contact Information Section */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
           <a 
-            href="mailto:techphorias3@gmail.com" 
+            href="mailto:techphorias2@gmail.com" 
             className="text-white/60 hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2"
           >
-            {/* You can add an email icon here if you want */}
             <span>Email us: techphorias2@gmail.com</span>
           </a>
           <span className="hidden sm:block text-white/30">|</span>
@@ -30,13 +29,18 @@ export const Footer = () => (
             href="tel:+919802066376" 
             className="text-white/60 hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2"
           >
-            {/* You can add a phone icon here if you want */}
             <span>Contact: +91 9802066376</span>
           </a>
         </div>
 
+        <div className="space-y-2">
           <div className="text-white/40 text-sm">
-          © 2025 TechPhoria. All rights reserved.
+            © 2025 TechPhoria. All rights reserved.
+          </div>
+          {/* Credit Section */}
+          <div className="text-white/30 text-[2 0px] tracking-widest font-medium">
+            Website Made By <span className="text-white/50">ADREERAJ DAS</span>
+          </div>
         </div>
       </div>
     </div>

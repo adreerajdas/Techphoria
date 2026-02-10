@@ -18,7 +18,7 @@ export const Schedule = () => {
     {
       icon: '💻',
       title: 'Platform - Round 1',
-      content: 'HackerRank (Click the "Get Started" button to begin) • 50 Coding Problems • 75 Total Marks'
+      content: 'HackerRank (Click the "Get Started" button to begin) • Coding Problems • 200 Total Marks'
     },
     {
       icon: '🔑',
@@ -28,7 +28,7 @@ export const Schedule = () => {
     {
       icon: '⏱️',
       title: 'Competition Duration',
-      content: '60 minutes to complete all coding challenges. Manage your time effectively to attempt all challenges.'
+      content: '90 minutes to complete all coding challenges. Manage your time effectively to attempt all challenges.'
     },
     {
       icon: '⚙️',
@@ -38,7 +38,7 @@ export const Schedule = () => {
     {
       icon: '🎯',
       title: 'Challenge Types',
-      content: '50 coding challenges covering various difficulty levels (easy to advanced). Read problem statements carefully.'
+      content: 'Challenges covering various difficulty levels (easy to advanced). Read problem statements carefully.'
     },
     {
       icon: '📤',
