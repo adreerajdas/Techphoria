@@ -38,7 +38,7 @@ export const Register = () => (
             download="Techphoria - Instructions.pdf"
             className="group relative border border-cyan-400 text-cyan-400 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 text-lg"
           >
-            <span className="relative z-10">Instructions</span>
+            <span className="relative z-10">Download Instructions</span>
             <div className="absolute inset-0 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
           
@@ -48,7 +48,7 @@ export const Register = () => (
             download="Techphoria - Programme Schedule.pdf"
             className="group relative border border-purple-400 text-purple-400 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-purple-400 hover:text-black hover:scale-105 text-lg"
           >
-            <span className="relative z-10">Schedule</span>
+            <span className="relative z-10">Download Schedule</span>
             <div className="absolute inset-0 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>

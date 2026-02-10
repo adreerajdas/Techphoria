@@ -5,23 +5,23 @@ export const Format = () => {
   const contestStages = [
     {
       icon: '🧠',
-      title: 'MCQs',
+      title: 'MCQ Round',
       description: 'Test your fundamental knowledge and logic with a comprehensive set of technical questions.',
       details: [
-        'Marks: 100',
-        'Focus: Logic & Concepts',
-        'Duration: Part of the 1.5h slot',
+        'Total MCQs: 50 Questions',
+        'Scoring: 2 Marks per MCQ',
+        'Total Section Marks: 100',
       ],
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: '💻',
-      title: 'Coding',
+      title: 'Coding Round',
       description: 'Implement algorithms and solve complex problems using your preferred language.',
       details: [
-        'Marks: 100',
+        'Total Programs: 10 Problems',
+        'Scoring: 10 Marks per Program',
         'C, C++, Java, or Python',
-        'Real-time test case validation',
       ],
       color: 'from-purple-500 to-indigo-500',
     },
@@ -65,7 +65,8 @@ export const Format = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {contestStages.map((stage) => (
             <TiltCard key={stage.title} className="group">
               <div className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-white/10 h-full transition-all duration-300 group-hover:border-cyan-500/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/10 group-hover:scale-105 flex flex-col">
@@ -93,6 +94,13 @@ export const Format = () => {
               </div>
             </TiltCard>
           ))}
+        </div>
+
+        {/* Additional Detailed Info Section */}
+        <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+          <p className="text-white/80 text-center leading-relaxed italic">
+            "Round 1 will consist of <span className="text-cyan-400 font-semibold">50 MCQs</span> carrying 2 marks each and <span className="text-purple-400 font-semibold">10 Programming questions</span> carrying 10 marks each, making a total of 200 marks. The questions will cover various difficulty levels ranging from easy to advanced. Participants are advised to read all problem statements carefully before attempting the questions."
+          </p>
         </div>
       </div>
     </section>

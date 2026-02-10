@@ -47,7 +47,6 @@ const GitHubIcon = () => (
 
 export const Organizers = () => {
   const organizers = [
-    // 1. Debashis Hati
     { 
       name: 'Debashis Hati', 
       role: 'HOD, CST Department', 
@@ -57,7 +56,6 @@ export const Organizers = () => {
       color: 'from-blue-500 to-cyan-500',
       linkedin: 'https://www.linkedin.com/in/debashis-hati-example'
     },
-    // 2. Adreeraj Das
     { 
       name: 'Adreeraj Das', 
       role: 'Administration & Website', 
@@ -69,29 +67,16 @@ export const Organizers = () => {
       instagram: 'https://www.instagram.com/addreeraj/',
       github: 'https://github.com/adreerajdas'
     },
-    // 3. Puspendu Satra
-    { 
-      name: 'Puspendu Satra', 
-      role: 'Question Set & Tech Helper', 
-      description: 'Event manager and lead technical coordinator, responsible for question sets and technical assistance.', 
-      avatar: '👨‍🎓',
-      photo: '/team/puspendu-satra.jpg',
-      color: 'from-green-500 to-teal-500',
-      linkedin: 'https://www.linkedin.com/in/puspendu45/',
-      github: 'https://github.com/iampuspendu'
-    },
-    // 4. Arka Putatunda
     { 
       name: 'Arka Putatunda', 
       role: 'Competition Management', 
-      description: 'Key team member handling competition management and student coordination for smooth execution.', 
+      description: 'Key team member responsible for question sets and student coordination for smooth execution.', 
       avatar: '🧑‍💻',
       photo: '/team/arka-putatunda.jpg',
       color: 'from-red-500 to-orange-500',
       linkedin: 'https://www.linkedin.com/in/arka-putatunda-4532122b7/',
       github: 'https://github.com/arkaputatundaofficial'
     },
-    // 5. Sayan Das
     { 
       name: 'Sayan Das', 
       role: 'Designer & Event Organizer', 
@@ -116,95 +101,51 @@ export const Organizers = () => {
           <p className="text-xl text-white/70 max-w-2xl mx-auto">Meet the dedicated team behind TechPhoria Season 3</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {organizers.map((organizer, index) => (
             <TiltCard key={index} className="group">
               <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-white/10 h-full flex flex-col justify-between transition-all duration-300 group-hover:border-cyan-500/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
                 
-                {/* Text Content (Name, Role, Description) */}
-                <div className="flex-grow">
-                  <h3 className="text-4xl font-bold text-white mb-2">{organizer.name}</h3>
-                  <div className="text-cyan-400 text-xl font-semibold mb-4">{organizer.role}</div>
-                  <p className="text-white/70 text-base leading-relaxed mb-6">{organizer.description}</p>
+                <div className="flex-grow text-center">
+                  <h3 className="text-2xl font-bold text-white mb-2">{organizer.name}</h3>
+                  <div className="text-cyan-400 text-sm font-semibold mb-4 uppercase tracking-wider">{organizer.role}</div>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">{organizer.description}</p>
                 </div>
 
-                {/* Larger Enhanced Avatar / Photo Section */}
                 <div className="mt-auto">
-                  <div className="relative w-48 h-48 mx-auto">
-                    {/* Main Image Container */}
-                    <div className={`w-48 h-48 rounded-full bg-gradient-to-r ${organizer.color} flex items-center justify-center text-5xl overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-300`}>
+                  <div className="relative w-36 h-36 mx-auto">
+                    <div className={`w-36 h-36 rounded-full bg-gradient-to-r ${organizer.color} flex items-center justify-center text-4xl overflow-hidden relative z-10 transform group-hover:scale-105 transition-transform duration-300`}>
                       {organizer.photo ? (
                         <Image
                           src={organizer.photo}
                           alt={organizer.name}
                           className="w-full h-full rounded-full object-cover"
-                          width={192}
-                          height={192}
+                          width={144}
+                          height={144}
                         />
                       ) : (
                         <span>{organizer.avatar}</span>
                       )}
                     </div>
-                    
-                    {/* Animated Gradient Border Effect */}
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                    
-                    {/* Floating Elements (Similar to reference image) */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-cyan-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-bounce"></div>
-                    <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-purple-400 rounded-full opacity-40 group-hover:opacity-70 transition-opacity duration-300 animate-pulse delay-150"></div>
-                    
-                    {/* Glow Effect */}
                     <div className="absolute inset-0 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 group-hover:scale-110"></div>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-white/10 text-center">
-                  <div className="inline-flex items-center space-x-2 text-cyan-400 text-sm mb-4">
-                    <AcademicCapIcon />
-                    {/* Conditionally render text based on organizer name */}
-                    <span>
-                      {organizer.name === 'Debashis Hati'
-                        ? 'CST Department, TPI'
-                        : 'Student, CST Department, TPI'}
-                    </span>
-                  </div>
-                  
-                  {/* Social Media Links */}
                   <div className="flex justify-center space-x-4 mt-2">
                     {organizer.linkedin && (
-                      <a 
-                        href={organizer.linkedin} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label={`${organizer.name}'s LinkedIn profile`}
-                        className="transform hover:scale-110 transition-transform duration-200"
-                      >
+                      <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
                         <LinkedInIcon />
                       </a>
                     )}
-                    
-                    {/* Instagram */}
                     {organizer.instagram && (
-                      <a 
-                        href={organizer.instagram} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label={`${organizer.name}'s Instagram profile`}
-                        className="transform hover:scale-110 transition-transform duration-200"
-                      >
+                      <a href={organizer.instagram} target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
                         <InstagramIcon />
                       </a>
                     )}
-                    
-                    {/* GitHub */}
                     {organizer.github && (
-                      <a 
-                        href={organizer.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        aria-label={`${organizer.name}'s GitHub profile`}
-                        className="transform hover:scale-110 transition-transform duration-200"
-                      >
+                      <a href={organizer.github} target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-200">
                         <GitHubIcon />
                       </a>
                     )}
