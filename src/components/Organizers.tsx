@@ -54,7 +54,7 @@ export const Organizers = () => {
       avatar: '👨‍🏫', 
       photo: '/team/debashis-hati.jpg',
       color: 'from-blue-500 to-cyan-500',
-      linkedin: 'https://www.linkedin.com/in/debashis-hati-example'
+      linkedin: 'https://www.linkedin.com/in/debasish-hati-79597b22a?utm_source=share_via&utm_content=profile&utm_medium=member_android'
     },
     { 
       name: 'Adreeraj Das', 
