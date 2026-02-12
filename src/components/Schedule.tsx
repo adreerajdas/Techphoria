@@ -33,7 +33,7 @@ export const Schedule = () => {
     {
       icon: '⚙️',
       title: 'Coding Languages & Tools',
-      content: 'Supported languages: C, C++, Python, Java. Ensure you are familiar with the syntax and features.'
+      content: 'Supported languages: C, Python, Java. Ensure you are familiar with the syntax and features.'
     },
     {
       icon: '🎯',
