@@ -183,7 +183,7 @@ export const Hero = () => {
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a 
-            href="https://forms.gle/v58LUvhByfh46PxC8"
+            href="https://forms.gle/zZaa7yJCTgzB7KH99"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
