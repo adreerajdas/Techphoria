@@ -17,8 +17,8 @@ export const Schedule = () => {
     },
     {
       icon: '💻',
-      title: 'Platform - Round 1',
-      content: 'HackerRank (Click the "Get Started" button to begin) • Coding Problems • 200 Total Marks'
+      title: 'Platform - Rounds',
+      content: 'The competition will be conducted on Google Meet, Google Form, HackerRank Links on Website & Whatsapp Group'
     },
     {
       icon: '🔑',

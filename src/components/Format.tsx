@@ -4,35 +4,37 @@ import { TiltCard } from './TiltCard';
 export const Format = () => {
   const contestStages = [
     {
-      icon: '🧠',
-      title: 'MCQ Round',
-      description: 'Test your fundamental knowledge and logic with a comprehensive set of technical questions.',
-      details: [
-        'Total MCQs: 50 Questions',
-        'Scoring: 2 Marks per MCQ',
-        'Total Section Marks: 100',
-      ],
-      color: 'from-blue-500 to-cyan-500',
-    },
-    {
       icon: '💻',
-      title: 'Coding Round',
-      description: 'Implement algorithms and solve complex problems using your preferred language.',
+      title: 'Round 1: Coding',
+      description: 'Solve programming challenges across various difficulty levels to prove your logic and syntax mastery.',
       details: [
-        'Total Programs: 10 Problems',
-        'Scoring: 10 Marks per Program',
-        'C, C++, Java, or Python',
+        '10 Programming Questions',
+        'Scoring: 10 Marks each',
+        'Total: 100 Marks',
+        'Difficulty: Easy to Advanced',
       ],
       color: 'from-purple-500 to-indigo-500',
     },
     {
-      icon: '⏱️',
-      title: 'The Challenge',
-      description: 'A race against time to maximize your score across both sections of the event.',
+      icon: '🧠',
+      title: 'Round 2: MCQs',
+      description: 'A comprehensive evaluation of technical fundamentals and core computer science concepts.',
       details: [
-        'Total Duration: 1.5 Hours',
-        'Full Marks: 200 Total',
-        'Ranked by speed & accuracy',
+        '50 Multiple Choice Questions',
+        'Scoring: 2 Marks each',
+        'Total: 100 Marks',
+        'Read statements carefully',
+      ],
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: '🏆',
+      title: 'The Evaluation',
+      description: 'The final leaderboard is determined by the cumulative score of both specialized rounds.',
+      details: [
+        'Grand Total: 200 Marks',
+        'Combined Accuracy Focus',
+        'Ranked by Total Score',
       ],
       color: 'from-orange-400 to-red-500',
     },
@@ -61,7 +63,7 @@ export const Format = () => {
             </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            1.5 Hours. 200 Marks. One Champion.
+            2 Rounds. 200 Marks. One Champion.
           </p>
         </div>
 
@@ -99,7 +101,7 @@ export const Format = () => {
         {/* Additional Detailed Info Section */}
         <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
           <p className="text-white/80 text-center leading-relaxed italic">
-            "Round 1 will consist of <span className="text-cyan-400 font-semibold">50 MCQs</span> carrying 2 marks each and <span className="text-purple-400 font-semibold">10 Programming questions</span> carrying 10 marks each, making a total of 200 marks. The questions will cover various difficulty levels ranging from easy to advanced. Participants are advised to read all problem statements carefully before attempting the questions."
+            "Round 1 will consist of <span className="text-purple-400 font-semibold">10 Programming Questions</span> carrying 10 marks each, and Round 2 will consist of <span className="text-cyan-400 font-semibold">50 MCQs</span> carrying 2 marks each, making a total of <span className="text-white font-bold">200 marks</span>. The questions will cover various difficulty levels ranging from easy to advanced. Participants are advised to read all the problem statements carefully before attempting the questions."
           </p>
         </div>
       </div>
