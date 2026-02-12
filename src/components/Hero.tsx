@@ -201,7 +201,7 @@ export const Hero = () => {
           </a>
 
           <a 
-            href="#countdown" 
+            href="https://www.hackerrank.com/techphoria-season-3/" 
             className="relative inline-flex items-center font-bold py-4 px-8 rounded-full transition-all duration-500 ease-in-out text-cyan-300 border-2 border-cyan-500/50 bg-transparent hover:text-white hover:bg-cyan-500/20 hover:border-cyan-400 hover:scale-105 hover:animate-[border-pulse_1.5s_infinite_ease-in-out]"
           >
             Get Started
